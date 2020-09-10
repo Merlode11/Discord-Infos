@@ -1,0 +1,36 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/loader.ejs") %>
+
+<div class="container">
+    <div class="card bg-dark text-white mt-5 shadow-sm">
+        <% if (error) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <div class="card-body">
+            <form method="POST">
+                <div class="form-group">
+                    <div class="card-title">
+                        <center><label for="userid" class="usr_title">Identifiant d'utilisateur <i class="required" data-placement="right" title="Requis">*</i></label></center>
+                    </div>
+                <input type="text" class="form-control" id="userid" name="user" placeholder="Entrez l'identifiant d'un utilisateur Discord (Exemple : 405479325316677654)" aria-describedby="help" autocomplete="off" required="">                
+                </div>
+                <div class="card-body">
+                <button type="submit" class="btn btn-blurple rounded" style="width: 100% !important;">Rechercher</button>
+                </div>
+            </form>
+        </div>
+        <center><div class="card-body notice_footer">
+            <p id="info" class="card-text text-muted">
+                <a href="https://github.com/GalackQSM/DiscordInfos" class="card-text text-muted" target="_blank">Github</a>
+                | <a href="https://galackqsm.fr" class="card-text text-muted" target="_blank">GalackQSM</a>
+        </div></center>
+    </div>
+</div>
+<script>
+    $(".required").tooltip();
+</script>
+</body>
+
+</html>
